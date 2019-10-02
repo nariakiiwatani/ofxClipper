@@ -70,10 +70,10 @@ public:
     
     // Member Function
     ////////////////////////////////////////////////
-    bool addPath(ofPath& path, ofxClipperPolyType clipperType);
-    bool addPolylines(ofxPolylines& polylines,ofxClipperPolyType clipperType);
-    bool addPolyline(ofPolyline& polyline,ofxClipperPolyType clipperType);
-    bool addRectangle(ofRectangle& rectangle,ofxClipperPolyType clipperType);
+    bool addPath(const ofPath& path, ofxClipperPolyType clipperType);
+    bool addPolylines(const ofxPolylines& polylines,ofxClipperPolyType clipperType);
+    bool addPolyline(const ofPolyline& polyline,ofxClipperPolyType clipperType);
+    bool addRectangle(const ofRectangle& rectangle,ofxClipperPolyType clipperType);
 
     bool clip(ofxClipperClipType clipType, 
               ofxPolylines &solution,
@@ -122,11 +122,11 @@ public:
     static void ofxPolylines_to_Polygons(const ofxPolylines& polylines, ClipperLib::Paths& polygons);
                 
                                       
-    static ofPolyline polygon_to_ofPolyline(ClipperLib::Path& polygon);
-    static void polygons_to_ofxPolylines(ClipperLib::Paths& polygons, ofxPolylines& polylines);
-    static void polygons_to_ofxPolylines(ClipperLib::PolyTree& polygons, ofxPolylines& polylines);
-    static void polygons_to_ofPath(ClipperLib::Paths& polygons, ofPath& path);
-    static ofPath polygon_to_ofPath(ClipperLib::Path& polygon);
+    static ofPolyline polygon_to_ofPolyline(const ClipperLib::Path& polygon);
+    static void polygons_to_ofxPolylines(const ClipperLib::Paths& polygons, ofxPolylines& polylines);
+    static void polygons_to_ofxPolylines(const ClipperLib::PolyTree& polygons, ofxPolylines& polylines);
+    static void polygons_to_ofPath(const ClipperLib::Paths& polygons, ofPath& path);
+    static ofPath polygon_to_ofPath(const ClipperLib::Path& polygon);
 
     static ClipperLib::PolyFillType convertWindingMode(ofPolyWindingMode windingMode);
     
